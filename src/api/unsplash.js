@@ -1,10 +1,10 @@
 import axios from 'axios';
-import unsplashApiKey from '../keys/unsplash.js';
+import keys from '../keys/keys.js';
 
 export default axios.create({
     baseURL: 'https://api.unsplash.com',
     headers: {
         Authorization:
-          `Client-ID ${unsplashApiKey}`
+          `Client-ID ${keys.unsplashApiKey}`
       }
 });
