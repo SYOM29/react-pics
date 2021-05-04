@@ -1,5 +1,1 @@
-if(process.env.ENVIRONMENT === 'production'){
-    module.exports = require('./prod');
-} else {
-    module.exports = require('./dev');
-}
+module.exports = process.env.UNSPLASH_API_KEY;
