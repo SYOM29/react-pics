@@ -1,26 +1,25 @@
 {
-  "name": "pics",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-pics",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "dependencies": {
-    "axios": "^0.21.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
+    "concurrently": "^6.0.2",
+    "express": "^4.17.1",
     "react-scripts": "^4.0.3"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYOM29/react-pics.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYOM29/react-pics/issues"
+  },
+  "homepage": "https://github.com/SYOM29/react-pics#readme"
 }
