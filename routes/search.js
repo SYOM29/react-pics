@@ -1,4 +1,4 @@
-import unsplash from "../api/unsplash";
+const unsplash = require("../api/unsplash");
 
 async function getImages()
 {
