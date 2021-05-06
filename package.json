@@ -14,10 +14,11 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
+    "build": "cd client && npm install && npm run build && cd ..",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku": "cd client && npm install && npm run build && cd .. && npm run start",
+    "heroku": "npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "proxy": "http://localhost:5000",
