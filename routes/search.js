@@ -1,6 +1,6 @@
 const unsplash = require("../api/unsplash");
 
-async function getImages()
+async function getImages(term)
 {
     return await unsplash.get("/search/photos", {
         params: { query: term }
@@ -8,7 +8,8 @@ async function getImages()
 }
 
 module.exports = (app) => {
-  app.get('/auth/google', async function(req, res) {
-    res.json(await getImages())
+  app.get('/search/photos', async(req, res) => {
+    const response = await getImages(req.query);
+    res.send(response.data);
   });
 }

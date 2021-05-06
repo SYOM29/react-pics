@@ -1,7 +1,9 @@
 const express = require('express');
-const keys = require('./config/keys');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 require('./routes/search')(app);
 
