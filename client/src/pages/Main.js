@@ -5,10 +5,11 @@ import Header from '../molecules/Header';
 
 export default class Main extends Component {
     state = { images: [] };
-    onSearchSubmit = async term => {
+    onSearchSubmit = async (searchTerm, orderBy) => {
       const response = await api.get("/search/photos", {
         params: { 
-          query: term 
+          query: searchTerm,
+          order_by: orderBy
         }
       });
   

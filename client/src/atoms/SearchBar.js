@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "./Dropdown";
-import searchSortOpts from '../constants/searchSortingDropdown';
+import constants from '../constants/constants';
 
 class SearchBar extends React.Component { 
   render() {
@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
             value={this.props.searchTerm}
             onChange={e => this.props.onChange(e.target.value)}
           />
-          <Dropdown sortOpts={searchSortOpts.dropdownOpts} />
+          <Dropdown sortOpts={constants.dropdownOpts} onSortByChange={this.props.onSortByChange}/>
         </div>
       </div>
     );
