@@ -6,13 +6,19 @@ export default class Header extends Component {
     state = { searchTerm: "", sortBy: "" };
     constructor(props) {
         super(props);
-        this.state = { searchTerm: "", sortBy: "" };
-      }
+        this.state = { searchTerm: '', sortBy: '' };
+    }
+
+    search()
+    {
+        var checkedSortBy = this.state.sortBy;
+        if (!checkedSortBy || checkedSortBy === '') checkedSortBy = constants.unsplashSortingConstants[0];
+        this.props.onSubmit(this.state.searchTerm, checkedSortBy);
+    }
 
     onFormSubmit = event => {
       event.preventDefault();
-      
-      this.props.onSubmit(this.state.searchTerm, this.state.sortBy);
+      this.search();
     }
 
     onSearchInputChange = (searchTerm) => 
@@ -22,7 +28,7 @@ export default class Header extends Component {
 
     onSortByChange = (sortBy) => {
         var sortingDirection = sortBy === constants.dropdownOpts[1] ? constants.unsplashSortingConstants[1] : constants.unsplashSortingConstants[0];
-        this.setState({ sortBy: sortingDirection }, () => this.props.onSubmit(this.state.searchTerm, this.state.sortBy));
+        this.setState({ sortBy: sortingDirection }, this.search);
     };
 
     render() {
