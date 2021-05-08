@@ -14,9 +14,26 @@ async function getImages(term)
     });
 }
 
+async function listTopics()
+{
+  return await unsplash.get("/topics", {
+    params: 
+    {
+      page: unsplashConfigs.pageNumber,
+      per_page: unsplashConfigs.perPage,
+      order_by: unsplashConfigs.orderBy
+    }
+});
+}
+
 module.exports = (app) => {
   app.get('/search/photos', async(req, res) => {
     const response = await getImages(req.query);
+    res.send(response.data);
+  });
+
+  app.get('/topics', async(req, res) => {
+    const response = await listTopics();
     res.send(response.data);
   });
 }
