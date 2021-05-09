@@ -6,6 +6,7 @@ const app = express();
 app.use(cors());
 
 require('./routes/search')(app);
+require('./routes/topics')(app);
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
