@@ -8,7 +8,7 @@ export default class Main extends Component {
     onSearchSubmit = async (searchTerm, orderBy) => {
       const response = await api.get("/search/photos", {
         params: { 
-          query: searchTerm,
+          searchTerm: searchTerm,
           order_by: orderBy
         }
       });

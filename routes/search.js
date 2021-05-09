@@ -1,15 +1,16 @@
 const unsplash = require("../api/unsplash");
 const unsplashConfigs = require('../config/unsplash');
 
-async function getImages(term)
+async function getImages(query)
 {
+  console.log(query);
     return await unsplash.get("/search/photos", {
         params: 
         { 
-          query: term, 
+          query: query.searchTerm, 
           page: unsplashConfigs.pageNumber,
           per_page: unsplashConfigs.perPage,
-          order_by: unsplashConfigs.orderBy
+          order_by: query.order_by
         }
     });
 }
